@@ -10,9 +10,6 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Folder Structure](#folder-structure)
-- [Code Snippets](#code-snippets)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Overview

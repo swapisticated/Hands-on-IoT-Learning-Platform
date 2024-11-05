@@ -49,7 +49,7 @@ To start Metro, run the following command from the _root_ of your React Native p
 # using npm
 cd PortableTinkeringLab
 npm install
-#npx react-native start
+npx react-native start
 
 ```
 

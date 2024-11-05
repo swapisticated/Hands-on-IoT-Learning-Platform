@@ -32,9 +32,9 @@ The Portable Tinkering Lab is a mobile application developed in React Native des
 To set up the Portable Tinkering Lab application, follow these steps:
 
 1. **Clone the repository**:
+   
    ```bash
    git clone https://github.com/swapisticated/portable-tinkering-lab.git
-
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 

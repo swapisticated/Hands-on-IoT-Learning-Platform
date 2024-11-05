@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "703031549894",
+    "project_id": "portable-tinkering-lab-e9667",
+    "storage_bucket": "portable-tinkering-lab-e9667.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:703031549894:android:308a82d0121225788edcc7",
+        "android_client_info": {
+          "package_name": "com.example.portable_tinkering_lab"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzIi_MCDarTpTJ64BYcX2SI6vl7ksAs88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:703031549894:android:6609898c387f34a58edcc7",
+        "android_client_info": {
+          "package_name": "com.exp.portable_tinkering_lab"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzIi_MCDarTpTJ64BYcX2SI6vl7ksAs88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

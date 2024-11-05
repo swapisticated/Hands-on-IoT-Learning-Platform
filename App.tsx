@@ -1,118 +1,85 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import React, { useEffect } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { KeyboardAvoidingView, Platform } from 'react-native';
+import LandingPage from './screens/LandingPage'; // Adjust the path as needed
+import CurriculumScreen from './screens/CurriculumScreen';
+import LabScreen from './screens/LabScreen';
+import ScanScreen from './screens/ScanScreen';
+import ComponentVideosScreen from './screens/ComponentVideosScreen'; // Import your ComponentVideosScreen
+import firebase from '@react-native-firebase/app';
+import "./global.css";
+import BlankScreen from './screens/BlankScreen';
+import VideoPlayerScreen from './components/VideoPlayerScreen';
+import SeventhGradeVideos from './screens/SeventhGradeVideos';
+import EighthGradeVideos from './screens/EighthGradeVideos';
+import NinthGradeVideos from './screens/NinthGradeVideos';
+import TenthGradeVideos from './screens/TenthGradeVideos';
+import PersistentLayout from './components/PersistentLayout';
+import Orientation from 'react-native-orientation-locker';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+// Add your Firebase configuration here
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID",
+};
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+const Stack = createStackNavigator();
+const Tab = createMaterialTopTabNavigator();
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+const App = () => {
+  useEffect(() => {
+    // Initialize Firebase
+    if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+    }
+    Orientation.lockToLandscape();
 
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
-
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+    // Clean up: unlock orientation on component unmount
+    return () => {
+      Orientation.unlockAllOrientations();
+    };
+  }, []);
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      keyboardVerticalOffset={Platform.select({ ios: 100, android: 0 })} // Adjust this value as needed
+      className="flex-1" // Full height for the keyboard avoiding view
+    >
+      <NavigationContainer>
+        <PersistentLayout>
+          <Stack.Navigator>
+            <Stack.Screen
+              name="Landing"
+              component={LandingPage}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen name="Curriculum" component={CurriculumScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="Lab" component={LabScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="Scan" component={ScanScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="ComponentVideos" component={ComponentVideosScreen} options={{ headerShown: true }} />
+            <Stack.Screen name="ProjectVideos" component={BlankScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="MechanicalToyVideos" component={BlankScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="ElectronicsToyVideos" component={BlankScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="PaperCircuitVideos" component={BlankScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="ToolsVideos" component={BlankScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="SolderVideos" component={BlankScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="VideoPlayer" component={VideoPlayerScreen} options={{ headerShown: false }} />
+            <Stack.Screen name="SeventhGradeVideos" component={SeventhGradeVideos} />
+            <Stack.Screen name="EighthGradeVideos" component={EighthGradeVideos} options={{ title: '8th Grade Videos' }} />
+            <Stack.Screen name="NinthGradeVideos" component={NinthGradeVideos} options={{ title: '9th Grade Videos' }} />
+            <Stack.Screen name="TenthGradeVideos" component={TenthGradeVideos} options={{ title: '10th Grade Videos' }} />
+          </Stack.Navigator>
+        </PersistentLayout>
+      </NavigationContainer>
+    </KeyboardAvoidingView>
   );
-}
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+};
 
 export default App;

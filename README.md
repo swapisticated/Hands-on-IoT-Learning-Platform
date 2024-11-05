@@ -21,7 +21,6 @@ The Portable Tinkering Lab is a mobile application developed in React Native des
 - **React Native**: Framework for building the mobile application.
 - **Firebase**: Backend for storing and retrieving video files.
 - **Teachable Machine**: For machine learning model integration to recognize electronic components.
-- **react-native-video**: For handling video playback in the app.
 - **TensorFlow.js**: For using machine learning models in the app.
 
 ## Installation

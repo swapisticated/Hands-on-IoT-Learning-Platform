@@ -32,7 +32,7 @@ const LandingPage = () => {
     : cards.filter(card => card.category === selectedCategory);
 
   return (
-    <View className="flex-1 bg-[#f9f1eb]">
+    <View className="flex-1 bg-[#0A131A]">
       <View className='w-full top-24 flex-1 ' >
       
         <View className="mb-2 h-12  w-full">
@@ -40,10 +40,10 @@ const LandingPage = () => {
             {categories.map(category => (
               <TouchableOpacity
                 key={category.id}
-                className={`mr-3 px-4 py-2 rounded-full justify-center ${selectedCategory === category.id ? 'bg-[#3d3d3d]' : 'bg-[#F3EBE5]'}`}
+                className={`mr-3 px-4 py-2 rounded-full justify-center ${selectedCategory === category.id ? 'bg-[#0C3028]' : 'bg-[#232B32]'}`}
                 onPress={() => setSelectedCategory(category.id)}
               >
-                <Text className={selectedCategory === category.id ? 'text-white' : 'text-black'}>
+                <Text className={selectedCategory === category.id ? 'text-green-300' : 'text-white'}>
                   {category.name}
                 </Text>
               </TouchableOpacity>
@@ -63,13 +63,13 @@ const LandingPage = () => {
           renderItem={({ item }) => (
             <View className="flex-1 mb-4 px-2">  
               <TouchableOpacity
-                className="flex-1 bg-[#e7ddd6] rounded-3xl border-2 border-[#d6cbc3] justify-center items-center h-40"
+                className="flex-1 bg-[#222A31] rounded-3xl  justify-center items-center h-40"
                 onPress={() => navigation.navigate('DetailsScreen', { card: item })}
               >
-                <Text className="text-slate-500 text-center font-bold text-xl">
+                <Text className="text-slate-200 text-center font-bold text-xl">
                   {item.title}
                 </Text>
-                <Text className="text-black text-center">{item.students} students</Text>
+                <Text className="text-slate-300 text-center">{item.students} students</Text>
               </TouchableOpacity>
             </View>
           )}

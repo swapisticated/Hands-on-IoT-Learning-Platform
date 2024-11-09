@@ -43,7 +43,7 @@ const SearchComponent = () => {
   };
 
   return (
-    <View className="absolute justify-center items-center rounded-2xl w-[63.5%] inset-x-32 top-5 flex-1 z-30 bg-[#e7ddd6] p-2 ml-3">
+    <View className="absolute justify-center items-center rounded-2xl w-[63.5%] inset-x-32 top-5 flex-1 z-30 bg-[#232B32] p-2 ml-3">
       <View className="relative w-full h-12">
         <Image
             source={require('../public/icons/search.png')} // Replace with your icon URL or local path

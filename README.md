@@ -1,4 +1,4 @@
-# Portable Tinkering Lab
+![image](https://github.com/user-attachments/assets/93361724-65a3-4e4f-bc3f-5e6ba8260c10)![image](https://github.com/user-attachments/assets/77dbd378-8934-4208-babb-a5eab83a0a2e)# Portable Tinkering Lab
 
 ## Table of Contents
 - [Overview](#overview)
@@ -22,6 +22,19 @@ The Portable Tinkering Lab is a mobile application developed in React Native des
 - **Firebase**: Backend for storing and retrieving video files.
 - **Teachable Machine**: For machine learning model integration to recognize electronic components.
 - **TensorFlow.js**: For using machine learning models in the app.
+
+--- 
+## Screenshots
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/ef03c3bb-e059-4693-b623-c798103a6bc9" width="300"/></td>
+    <td><img src="https://github.com/user-attachments/assets/157c9a67-8cd2-4225-a6d1-b3c849fc1eb7" width="300"/></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/6e2a729e-628e-42ae-9d2f-b753ac980527" width="300"/></td>
+    <td><img src="https://github.com/user-attachments/assets/a5918664-c66a-4104-9f68-e7ebe04dcb5b" width="300"/></td>
+  </tr>
+</table>
 
 ## Installation
 To set up the Portable Tinkering Lab application, follow these steps:

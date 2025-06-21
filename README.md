@@ -1,4 +1,3 @@
-![image](https://github.com/user-attachments/assets/93361724-65a3-4e4f-bc3f-5e6ba8260c10)![image](https://github.com/user-attachments/assets/77dbd378-8934-4208-babb-a5eab83a0a2e)# Portable Tinkering Lab
 
 ## Table of Contents
 - [Overview](#overview)
